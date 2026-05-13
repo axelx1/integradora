@@ -1,0 +1,439 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background: #ffffff;
+}
+
+/* --- Sidebar --- */
+nav {
+  width: 200px;
+  background: #1a6fc4;
+  border-right: 1px solid #ddd;
+  padding: 20px 0;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+nav h2 {
+  font-size: 13px;
+  color: #ffffff;
+  padding: 0 16px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+nav img {
+  display: block;
+  margin: 0 auto 8px;
+}
+
+nav a {
+  display: block;
+  padding: 8px 16px;
+  color: #cce0f5;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+
+nav a:hover {
+  background: #155ea0;
+  color: #ffffff;
+}
+
+nav a.active {
+  color: #ffffff;
+  border-left-color: #ffffff;
+  background: #155ea0;
+  font-weight: 500;
+}
+
+/* --- Hero / Banner --- */
+.hero {
+  background: linear-gradient(to bottom, #1a1a2e, #ffffff);
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero h1 {
+  font-size: 64px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 20px;
+  opacity: 0.85;
+}
+
+/* --- Contenido principal --- */
+main {
+  padding: 32px;
+}
+
+.seccion {
+  margin-bottom: 3rem;
+}
+
+.seccion h2 {
+  font-size: 32px;
+  margin-bottom: 1rem;
+  color: #1a1a2e;
+}
+
+.seccion p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* --- Fuente Lacquer --- */
+.lacquer-regular {
+  font-family: "Lacquer", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* --- Grid general --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* --- Tarjetas de galería --- */
+.tarjeta {
+  flex-shrink: 0;
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.tarjeta p {
+  padding: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* --- Galería con scroll --- */
+.galeria {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 12px 0;
+  max-width: 100%;
+}
+
+.galeria::-webkit-scrollbar {
+  height: 6px;
+}
+
+.galeria::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.galeria::-webkit-scrollbar-thumb {
+  background: #1a6fc4;
+  border-radius: 4px;
+}
+
+/* --- Botón azul con degradado --- */
+.btn-azul {
+  display: inline-block;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background: linear-gradient(135deg, #378ADD, #185FA5);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  margin-top: 1rem;
+}
+
+.btn-azul:hover {
+  box-shadow: 0 8px 24px rgba(24, 95, 165, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-azul:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 8px rgba(24, 95, 165, 0.3);
+}
+
+/* --- Nosotros: grid misión/visión/valores --- */
+.grid-nosotros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 3rem;
+}
+
+.tarjeta-info {
+  background: #f5f8ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.tarjeta-info h3 {
+  font-size: 22px;
+  color: #1a1a2e;
+  margin-bottom: 0.75rem;
+}
+
+.tarjeta-info p, .tarjeta-info li {
+  color: #555;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.tarjeta-info ul {
+  padding-left: 1.2rem;
+}
+
+/* --- Equipo --- */
+.grid-equipo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.tarjeta-equipo {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #1a6fc4;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 auto 12px;
+}
+
+.tarjeta-equipo h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #1a1a2e;
+}
+
+.tarjeta-equipo p {
+  font-size: 13px;
+  color: #888;
+}
+
+/* --- Cursos --- */
+.grid-cursos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.tarjeta-curso {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.curso-header {
+  padding: 1rem;
+  color: white;
+}
+
+.curso-header.azul {
+  background: linear-gradient(135deg, #378ADD, #185FA5);
+}
+
+.curso-header h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.curso-body {
+  padding: 1rem;
+}
+
+.curso-body p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.curso-body ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.curso-body li {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* --- Eventos --- */
+.grid-eventos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.tarjeta-evento {
+  display: flex;
+  gap: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  align-items: flex-start;
+}
+
+.evento-fecha {
+  background: #1a6fc4;
+  color: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  flex-shrink: 0;
+  min-width: 52px;
+}
+
+.evento-info h4 {
+  font-size: 15px;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.evento-info p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.evento-lugar {
+  font-size: 12px;
+  color: #1a6fc4;
+}
+
+/* --- Redes sociales --- */
+.grid-redes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.red-social {
+  padding: 10px 24px;
+  border: 2px solid #1a6fc4;
+  border-radius: 8px;
+  color: #1a6fc4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.red-social:hover {
+  background: #1a6fc4;
+  color: white;
+}
+
+/* --- Contacto --- */
+.grid-contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formulario label {
+  font-size: 14px;
+  color: #444;
+  font-weight: 500;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  border-color: #1a6fc4;
+}
+
+.info-contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 1rem;
+}
+
+.info-item {
+  background: #f5f8ff;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.info-item h4 {
+  font-size: 13px;
+  color: #1a6fc4;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info-item p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
